@@ -219,17 +219,17 @@ layout: default
 
 <div class="section" id="css-syntax">
   <div class="col">
-    <h3>Syntax</h3>
+    <h3>CSS 문법</h3>
     <ul>
-      <li>Use soft tabs with two spaces—they're the only way to guarantee code renders the same in any environment.</li>
-      <li>When grouping selectors, keep individual selectors to a single line.</li>
-      <li>Include one space before the opening brace of declaration blocks for legibility.</li>
-      <li>Place closing braces of declaration blocks on a new line.</li>
-      <li>Include one space after <code>:</code> for each declaration.</li>
-      <li>Each declaration should appear on its own line for more accurate error reporting.</li>
-      <li>End all declarations with a semi-colon. The last declaration's is optional, but your code is more error prone without it.</li>
-      <li>Comma-separated property values should include a space after each comma (e.g., <code>box-shadow</code>).</li>
-      <li>Don't include spaces after commas <em>within</em> <code>rgb()</code>, <code>rgba()</code>, <code>hsl()</code>, <code>hsla()</code>, or <code>rect()</code> values. This helps differentiate multiple color values (comma, no space) from multiple property values (comma with space).</li>
+      <li>공백 문자 네 개를 사용하는 소프트탭을 사용합니다.</li>
+      <li>쉼표를 사용하여 선택자를 그룹핑하는 경우, 개행하여 한 줄에 하나씩 작성합니다.</li>
+      <li>가독성을 높이기 위해 여는 중괄호 앞에 여백을 한칸 놓습니다.</li>
+      <li>닫는 중괄호는 새로운 줄에 놓습니다.</li>
+      <li>각 선언에서 <code>:</code> 뒤에는 공백 문자 하나를 포함시킵니다.</li>
+      <li>각 선언은 한 줄에 하나씩 하도록 합니다. 그렇게 함으로써 좀 더 정확하게 에러를 확인 할 수 있습니다.</li>
+      <li>모든 선언은 마지막에 세미콜론(;)으로 끝냅니다. 맨 마지막 선언에서는 생략가능하지만, 이후 발생할 수 있는 실수를 방지하기 위함입니다.</li>
+      <li>콤마로 나뉜 다중 속성값들은 각각의 콤마 뒤에 공백 문자를 하나 포함시키거나 줄 맞춰 개행합니다. (e.g., <code>box-shadow</code>).</li>
+      <li><code>rgb()</code>, <code>rgba()</code>, <code>hsl()</code>, <code>hsla()</code>, <code>rect()</code> 값들 안에서는 콤마로 나뉜다고 하더라도 공백 문자를 포함시키지 않습니다. 이 값들은 다중 속성값이 아니기 때문입니다.</li>
       <li>Don't prefix property values or color parameters with a leading zero (e.g., <code>.5</code> instead of <code>0.5</code> and <code>-.5px</code> instead of <code>-0.5px</code>).</li>
       <li>Lowercase all hex values, e.g., <code>#fff</code>. Lowercase letters are much easier to discern when scanning a document as they tend to have more unique shapes.</li>
       <li>Use shorthand hex values where available, e.g., <code>#fff</code> instead of <code>#ffffff</code>.</li>
