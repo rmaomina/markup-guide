@@ -4,7 +4,7 @@ layout: default
 
 
 <div class="heading" id="toc">
-  <h2>Table of contents</h2>
+  <h2>목차</h2>
 </div>
 <div class="section toc">
   <div class="col">
@@ -12,15 +12,15 @@ layout: default
     <ul>
       <li><a href="#html-syntax">Syntax</a></li>
       <li><a href="#html-doctype">HTML5 doctype</a></li>
-      <li><a href="#html-lang">Language attribute</a></li>
-      <li><a href="#html-encoding">Character encoding</a></li>
-      <li><a href="#html-ie-compatibility-mode">Internet Explorer compatibility mode</a></li>
-      <li><a href="#html-style-script">CSS and JavaScript includes</a></li>
-      <li><a href="#html-practicality">Practicality over purity</a></li>
-      <li><a href="#html-attribute-order">Attribute order</a></li>
-      <li><a href="#html-boolean-attributes">Boolean attributes</a></li>
-      <li><a href="#html-reducing-markup">Reducing markup</a></li>
-      <li><a href="#html-javascript">JavaScript generated markup</a></li>
+      <li><a href="#html-lang">언어(lang) 속성</a></li>
+      <li><a href="#html-encoding">인코딩 설정</a></li>
+      <li><a href="#html-ie-compatibility-mode">IE 호환모드 설정</a></li>
+      <li><a href="#html-style-script">CSS, JavaScript 삽입</a></li>
+      <li><a href="#html-practicality">완벽함보다는 실용성을 추구</a></li>
+      <li><a href="#html-attribute-order">속성(attr) 순서</a></li>
+      <li><a href="#html-boolean-attributes">Boolean 속성</a></li>
+      <li><a href="#html-reducing-markup">마크업 간결화</a></li>
+      <li><a href="#html-javascript">스크립트 내의 마크업</a></li>
     </ul>
   </div>
   <div class="col">
@@ -46,12 +46,14 @@ layout: default
 
 <div class="section" id="golden-rule">
   <div class="col">
-    <h2>Golden rule</h2>
-    <p>Enforce these, or your own, agreed upon guidelines at all times. Small or large, call out what's incorrect. For additions or contributions to this Code Guide, please <a href="https://github.com/mdo/code-guide/issues/new">open an issue on GitHub</a>.</p>
+    <h2>기본 규칙</h2>
+    <p>
+      가능한 규칙을 지켜 코드를 작성합니다. 만약 수정해야 할 내용이 있다면 팀내에서 논의하여 문서가 업데이트 될 수 있도록 합니다.
+    </p>
   </div>
   <div class="col">
     <blockquote>
-      <p>Every line of code should appear to be written by a single person, no matter the number of contributors.</p>
+      <p>얼마나 많은 작업자가 참여했는지와 무관하게 한명이 쓴 것처럼 보여야 합니다.</p>
     </blockquote>
   </div>
 </div>
@@ -66,11 +68,9 @@ layout: default
   <div class="col">
     <h3>Syntax</h3>
     <ul>
-      <li>Use soft tabs with two spaces—they're the only way to guarantee code renders the same in any environment.</li>
-      <li>Nested elements should be indented once (two spaces).</li>
-      <li>Always use double quotes, never single quotes, on attributes.</li>
-      <li>Don't include a trailing slash in self-closing elements—the <a href="http://dev.w3.org/html5/spec-author-view/syntax.html#syntax-start-tag">HTML5 spec</a> says they're optional.</li>
-      <li>Don’t omit optional closing tags (e.g. <code>&lt;/li&gt;</code> or <code>&lt;/body&gt;</code>).</li>
+      <li>공백 문자 네 개를 사용하는 소프트탭을 사용합니다.</li>
+      <li>속성(attr)값을 지정할 때에는 작은 따옴표 대신 항상 큰 따옴표를 사용합니다.</li>
+      <li>단일 태그에서는 슬래시(/)를 사용하지 않습니다. (e.g. <code>&lt;br/&gt;</code> or <code>&lt;img/&gt;</code>)</li>
     </ul>
   </div>
   <div class="col">
@@ -81,7 +81,7 @@ layout: default
 <div class="section" id="html-doctype">
   <div class="col">
     <h3>HTML5 doctype</h3>
-    <p>Enforce standards mode and more consistent rendering in every browser possible with this simple doctype at the beginning of every HTML page.</p>
+    <p>모든 HTML 페이지의 시작에 이 문서 타입을 선언함으로써, 표준 모드를 사용하게끔 강제합니다.</p>
   </div>
   <div class="col">
     {% highlight html %}{% include html/doctype.html %}{% endhighlight %}
@@ -90,50 +90,49 @@ layout: default
 
 <div class="section" id="html-lang">
   <div class="col">
-    <h3>Language attribute</h3>
-    <p>From the HTML5 spec:</p>
-    <blockquote>
-      <p>Authors are encouraged to specify a lang attribute on the root html element, giving the document's language. This aids speech synthesis tools to determine what pronunciations to use, translation tools to determine what rules to use, and so forth.</p>
-    </blockquote>
-    <p>Read more about the <code>lang</code> attribute <a href="http://www.w3.org/html/wg/drafts/html/master/semantics.html#the-html-element">in the spec</a>.</p>
-    <p>Head to Sitepoint for a <a href="http://reference.sitepoint.com/html/lang-codes">list of language codes</a>.</p>
+    <h3>언어(lang) 속성</h3>
+    <p>문서의 루트 요소인 html에 lang 속성을 추가합니다.</p>
+    <ul>
+      <li>영어: en</li>
+      <li>한국어: ko</li>
+      <li>일본어: ja</li>
+    </ul>
+    <p>또한, CSS에서의 활용을 위해 body에 언어구별용 class를 추가합니다.</p>
+    <ul>
+      <li>영어: en-US</li>
+      <li>한국어: ko-KR</li>
+      <li>일본어: ja-JP</li>
+    </ul>
   </div>
   <div class="col">
     {% highlight html %}{% include html/lang.html %}{% endhighlight %}
   </div>
 </div>
 
-<div class="section" id="html-ie-compatibility-mode">
-  <div class="col">
-    <h3>IE compatibility mode</h3>
-    <p>Internet Explorer supports the use of a document compatibility <code>&lt;meta&gt;</code> tag to specify what version of IE the page should be rendered as. Unless circumstances require otherwise, it's most useful to instruct IE to use the latest supported mode with <strong>edge mode</strong>.</p>
-    <p>For more information, <a href="http://stackoverflow.com/questions/6771258/whats-the-difference-if-meta-http-equiv-x-ua-compatible-content-ie-edge-e">read this awesome Stack Overflow article</a>.</p>
-  </div>
-  <div class="col">
-    {% highlight html %}{% include html/ie-compatibility-mode.html %}{% endhighlight %}
-  </div>
-</div>
-
 <div class="section" id="html-encoding">
   <div class="col">
-    <h3>Character encoding</h3>
-    <p>Quickly and easily ensure proper rendering of your content by declaring an explicit character encoding. When doing so, you may avoid using character entities in your HTML, provided their encoding matches that of the document (generally UTF-8).</p>
+    <h3>인코딩 설정</h3>
+    <p>문자열 인코딩을 명시적으로 선언함으로써, 콘텐츠를 빠르고 쉽게 정확한 방법으로 렌더링 되도록 합니다.</p>
   </div>
   <div class="col">
     {% highlight html %}{% include html/encoding.html %}{% endhighlight %}
   </div>
 </div>
 
+<div class="section" id="html-ie-compatibility-mode">
+  <div class="col">
+    <h3>IE 호환모드 설정</h3>
+    <p>인터넷 익스플로러는 <code>&lt;meta&gt;</code> 태그를 통해 어떤 버전의 인터넷 익스플로러를 사용해야 하는지를 명시함으로써 문서의 호환성을 지원합니다. <strong>edge mode</strong>를 사용하여 IE가 항상 최신 버전의 모드를 사용하여 문서를 렌더링하도록 지정합니다.</p>
+  </div>
+  <div class="col">
+    {% highlight html %}{% include html/ie-compatibility-mode.html %}{% endhighlight %}
+  </div>
+</div>
+
 <div class="section" id="html-style-script">
   <div class="col">
-    <h3>CSS and JavaScript includes</h3>
-    <p>Per HTML5 spec, typically there is no need to specify a <code>type</code> when including CSS and JavaScript files as <code>text/css</code> and <code>text/javascript</code> are their respective defaults.</p>
-    <h4>HTML5 spec links</h4>
-    <ul>
-      <li><a href="http://www.w3.org/TR/2011/WD-html5-20110525/semantics.html#the-link-element">Using link</a></li>
-      <li><a href="http://www.w3.org/TR/2011/WD-html5-20110525/semantics.html#the-style-element">Using style</a></li>
-      <li><a href="http://www.w3.org/TR/2011/WD-html5-20110525/scripting-1.html#the-script-element">Using script</a></li>
-    </ul>
+    <h3>CSS, JavaScript 삽입</h3>
+    <p>HTML5 명세에서는 CSS와 Javascript를 불러올 때 <code>type</code>이나 <code>text/css</code> 속성을 생략하도록 권고하고 있습니다. 이를 따라 간결하게 코드를 작성합니다.</p>
   </div>
   <div class="col">
     {% highlight html %}{% include html/style-script.html %}{% endhighlight %}
@@ -142,15 +141,15 @@ layout: default
 
 <div class="section" id="html-practicality">
   <div class="col">
-    <h3>Practicality over purity</h3>
-    <p>Strive to maintain HTML standards and semantics, but not at the expense of practicality. Use the least amount of markup with the fewest intricacies whenever possible.</p>
+    <h3>완벽함보다는 실용성을 추구</h3>
+    <p>HTML 표준을 준수하고 시맨틱한 문서를 작성하기 위해 노력하기는 하지만, 추가적인 노력이 필요하지 않은 범위내에서만 합니다. 최대한 간결한 코드를 사용하도록 합니다.</p>
   </div>
 </div>
 
 <div class="section" id="html-attribute-order">
   <div class="col">
-    <h3>Attribute order</h3>
-    <p>HTML attributes should come in this particular order for easier reading of code.</p>
+    <h3>속성(attr) 순서</h3>
+    <p>HTML 태그 속성들은 코드의 가독성 향상을 위해 가능한 아래의 순서를 지켜 작성합니다.</p>
     <ul>
       <li><code>class</code></li>
       <li><code>id</code>, <code>name</code></li>
@@ -159,7 +158,7 @@ layout: default
       <li><code>title</code>, <code>alt</code></li>
       <li><code>aria-*</code>, <code>role</code></li>
     </ul>
-    <p>Classes make for great reusable components, so they come first. Ids are more specific and should be used sparingly (e.g., for in-page bookmarks), so they come second.</p>
+    <p><code>class</code>는 콤포넌트의 재사용성을 높여주기 때문에 가장 먼저 오게 합니다. <code>id</code>는 좀 더 구체적이고 제한적으로 쓰이므로 두 번째로 오게 합니다.</p>
   </div>
   <div class="col">
     {% highlight html %}{% include html/attribute-order.html %}{% endhighlight %}
@@ -168,17 +167,8 @@ layout: default
 
 <div class="section" id="html-boolean-attributes">
   <div class="col">
-    <h3>Boolean attributes</h3>
-    <p>A boolean attribute is one that needs no declared value. XHTML required you to declare a value, but HTML5 has no such requirement.</p>
-    <p>For further reading, consult the <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/common-microsyntaxes.html#boolean-attributes">WhatWG section on boolean attributes</a>:</p>
-    <blockquote>
-      <p>The presence of a boolean attribute on an element represents the true value, and the absence of the attribute represents the false value.</p>
-    </blockquote>
-    <p>If you <em>must</em> include the attribute's value, and <strong>you don't need to</strong>, follow this WhatWG guideline:</p>
-    <blockquote>
-      <p>If the attribute is present, its value must either be the empty string or [...] the attribute's canonical name, with no leading or trailing whitespace.</p>
-    </blockquote>
-    <p><strong>In short, don't add a value.</strong></p>
+    <h3>Boolean 속성</h3>
+    <p>불리언 태그 속성은 굳이 속성값을 지정할 필요가 없으므로 지정하지 않습니다. (XHTML에서는 속성값 지정이 필요했지만 HTML5에서는 그런 제약이 없어졌습니다.)</p>
   </div>
   <div class="col">
     {% highlight html %}{% include html/boolean-attributes.html %}{% endhighlight %}
@@ -187,8 +177,8 @@ layout: default
 
 <div class="section" id="html-reducing-markup">
   <div class="col">
-    <h3>Reducing markup</h3>
-    <p>Whenever possible, avoid superfluous parent elements when writing HTML. Many times this requires iteration and refactoring, but produces less HTML. Take the following example:</p>
+    <h3>마크업 간결화</h3>
+    <p>모듈화를 고려하여 가능한 마크업은 간결하게 작성합니다.</p>
   </div>
   <div class="col">
     {% highlight html %}{% include html/reducing-markup.html %}{% endhighlight %}
@@ -197,8 +187,8 @@ layout: default
 
 <div class="section" id="html-javascript">
   <div class="col">
-    <h3>JavaScript generated markup</h3>
-    <p>Writing markup in a JavaScript file makes the content harder to find, harder to edit, and less performant. Avoid it whenever possible.</p>
+    <h3>스크립트 내의 마크업</h3>
+    <p>자바스크립트 안에 마크업을 쓰는 것인 콘텐츠를 찾고 수정하기가 힘들며 효율적이지도 않습니다. 따라서 가급적이면 피하도록 합니다.</p>
   </div>
 </div>
 
