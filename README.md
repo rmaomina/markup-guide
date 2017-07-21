@@ -289,8 +289,8 @@ HTML 표준을 준수하고 시맨틱한 문서를 작성하기 위해 노력하
 
     // With nesting
     .table > thead {
-        > th { … }
-        > td { … }
+        th { … }
+        td { … }
     }
 
 ### 전처리문 계산식 <a id="css-preprocessor-calculation" href="#css-preprocessor-calculation">#</a>
