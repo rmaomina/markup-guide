@@ -110,7 +110,7 @@ CSS와 JavaScript를 불러올 때 `type` 속성을 생략합니다.
 <link rel="stylesheet" href="code-guide.css">
 
 <!-- In-document CSS -->
-<style>...</style>
+<style> ... </style>
 
 <!-- JavaScript -->
 <script src="code-guide.js"></script>
