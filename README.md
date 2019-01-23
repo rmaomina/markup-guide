@@ -265,6 +265,7 @@ HTML 표준을 준수하고 시맨틱한 문서를 작성하기 위해 노력하
     opacity: 0.5;
     border-width: 0px;
     background-size: 100% auto;
+    background-position: 50% 50%;
 
 /* O */
     color: #fff;
@@ -274,6 +275,7 @@ HTML 표준을 준수하고 시맨틱한 문서를 작성하기 위해 노력하
     opacity: .5;
     border-width: 0;
     background-size: 100%;
+    background-position: 50%;
 ```
 
 의미있는 블럭 기준으로 빈 줄을 포함합니다.
